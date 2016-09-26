@@ -1,6 +1,7 @@
 package practica3.gabrielosorio.com.practica3actividades;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -20,6 +21,9 @@ public class LogginActivity extends AppCompatActivity implements View.OnClickLis
     String contrasena = "";
     String correo;
     boolean flag = false;
+
+    SharedPreferences prefs;
+    SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

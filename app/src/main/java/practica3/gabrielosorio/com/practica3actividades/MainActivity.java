@@ -28,13 +28,21 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
+        Intent intent;
+        Toast toast;
         switch (id){
             case R.id.mMiperfil:
-                Toast toast1 = Toast.makeText(getApplicationContext(), "A perfil", Toast.LENGTH_SHORT);
-                toast1.show();
-                Intent intent = new Intent(this, PerfilActivity.class);
+                toast = Toast.makeText(getApplicationContext(), "A perfil", Toast.LENGTH_SHORT);
+                toast.show();
+                intent = new Intent(MainActivity.this, PerfilActivity.class);
                 intent.putExtra("usuario",user);
                 intent.putExtra("email",correo);
+                startActivity(intent);
+                break;
+            case R.id.mClasifica:
+                toast = Toast.makeText(getApplicationContext(), "A clasificacion", Toast.LENGTH_SHORT);
+                toast.show();
+                intent = new Intent(MainActivity.this, ClasificacionActivity.class);
                 startActivity(intent);
                 break;
         }
