@@ -60,6 +60,7 @@ public class LogginActivity extends AppCompatActivity implements View.OnClickLis
                     intent1.putExtra("usuario",eUsuario.getText().toString());
                     intent1.putExtra("email",correo);
                     startActivity(intent1);
+                    finish();
                 }
                 else{
                     Toast toast1 = Toast.makeText(getApplicationContext(), "Usuario o contraseña incorrectos", Toast.LENGTH_LONG);

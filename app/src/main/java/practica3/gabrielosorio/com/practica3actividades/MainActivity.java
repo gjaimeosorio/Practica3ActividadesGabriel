@@ -43,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
                 toast = Toast.makeText(getApplicationContext(), "A clasificacion", Toast.LENGTH_SHORT);
                 toast.show();
                 intent = new Intent(MainActivity.this, ClasificacionActivity.class);
+                intent.putExtra("usuario",user);
+                intent.putExtra("email",correo);
                 startActivity(intent);
                 break;
         }

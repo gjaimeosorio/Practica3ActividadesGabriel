@@ -23,7 +23,9 @@ public class ClasificacionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clasificacion);
-
+        Bundle extras = getIntent().getExtras();
+        user = extras.getString("usuario");
+        correo = extras.getString("email");
       /*  FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
         SupermanFragment fragment = new SupermanFragment();
@@ -111,7 +113,19 @@ public class ClasificacionActivity extends AppCompatActivity {
                 toast = Toast.makeText(getApplicationContext(), "A publicidad", Toast.LENGTH_SHORT);
                 toast.show();
                 intent = new Intent(ClasificacionActivity.this, MainActivity.class);
+                intent.putExtra("usuario",user);
+                intent.putExtra("email",correo);
                 startActivity(intent);
+                finish();
+                break;
+            case R.id.mMiperfil:
+                toast = Toast.makeText(getApplicationContext(), "A perfil", Toast.LENGTH_SHORT);
+                toast.show();
+                intent = new Intent(ClasificacionActivity.this, PerfilActivity.class);
+                intent.putExtra("usuario",user);
+                intent.putExtra("email",correo);
+                startActivity(intent);
+                finish();
                 break;
         }
         return super.onOptionsItemSelected(item);

@@ -35,14 +35,26 @@ public class PerfilActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
+        Toast toast;
+        Intent intent;
         switch (id){
             case R.id.mPpal:
-                Toast toast1 = Toast.makeText(getApplicationContext(), "A publicidad", Toast.LENGTH_SHORT);
-                toast1.show();
-                Intent intent = new Intent(this, MainActivity.class);
+                toast = Toast.makeText(getApplicationContext(), "A publicidad", Toast.LENGTH_SHORT);
+                toast.show();
+                intent = new Intent(this, MainActivity.class);
                 intent.putExtra("usuario",user);
                 intent.putExtra("email",correo);
                 startActivity(intent);
+                finish();
+                break;
+            case R.id.mClasifica:
+                toast = Toast.makeText(getApplicationContext(), "A clasificación", Toast.LENGTH_SHORT);
+                toast.show();
+                intent = new Intent(PerfilActivity.this, ClasificacionActivity.class);
+                intent.putExtra("usuario",user);
+                intent.putExtra("email",correo);
+                startActivity(intent);
+                finish();
                 break;
         }
         return super.onOptionsItemSelected(item);

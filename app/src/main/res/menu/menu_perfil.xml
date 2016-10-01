@@ -4,4 +4,7 @@
         android:id="@+id/mPpal"
         android:title="@string/ppal"
         />
+    <item
+        android:id="@+id/mClasifica"
+        android:title="@string/clasifica"/>
 </menu>
