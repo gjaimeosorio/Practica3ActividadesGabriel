@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class LogginActivity extends AppCompatActivity implements View.OnClickListener {
@@ -40,7 +41,11 @@ public class LogginActivity extends AppCompatActivity implements View.OnClickLis
     String user = extras.getString("usuario");
     String contrasena = extras.getString("contrasena");
     ********************/
-    }
+        prefs = getPreferences(MODE_PRIVATE);
+        editor = prefs.edit();
+        //refreshPrefs();
+
+    }//Close OnCreate
 
     @Override
     public void onClick(View view) {
@@ -85,5 +90,16 @@ public class LogginActivity extends AppCompatActivity implements View.OnClickLis
             Log.d("mensaje","no se cargaron datos");
         }
     }
+
+    public void savePref(View view){
+        EditText campo = (EditText) findViewById(R.id.eUsuario);
+        String usuario = campo.getText().toString();
+        editor.putString("user", usuario);
+        editor.commit();
+        //refreshPrefs();
+    }
+
+
+
 }
 

@@ -9,9 +9,34 @@
     <string name="aceptar">Aceptar</string>
     <string name="cancelar">Cancelar</string>
     <string name="miperfil">Mi Perfil</string>
-    <string name="ppal">Publicidad</string>
+    <string name="ppal">Promociones</string>
     <string name="dia">Menú del día:</string>
     <string name="clasifica">Clasificación</string>
+    <string name="abierto">Open navigation drawer</string>
+    <string name="cerrado">Close navigation drawer</string>
+    <string name="infomcmenu">- Un sándwich a elegir*
+- Patatas fritas medianas, patatas Deluxe o ensalada.
+- Una botella de 50 cl de agua Nestlé Aquarel, un refresco de 40 cl (Coca-Cola, Coca-Cola Zero, Coca-Cola Light, Sprite, Lipton Ice Tea, Trina Limón), una cerveza Mahou de 30cl o una cerveza sin alcohol Mahou de 30cl.
+Menú también disponible en tamaño grande, con bebida y patatas grandes. Por solo 60 céntimos más.</string>
+    <string name="mcmenufinal">*El sándwich puede variar dependiendo de la oferta de cada restaurante</string>
+    <string name="infomcensa">- Una ensalada a elegir*- Una botella de 50 cl de agua Aquabona, un refresco de 40 cl (Coca-Cola, Coca-Cola Zero, Coca-Cola Light, Sprite, Lipton Ice Tea, Trina Limón), una cerveza Mahou de 30cl o una cerveza sin alcohol Mahou de 30cl.</string>
+    <string name="mcesafinal">*La ensalada puede variar dependiendo de la oferta de cada restaurante</string>
+    <string name="infohappy">- Un plato principal (McFish, Hamburguesa, Hamburguesa con queso, McNuggets, Chicken Burger Kids).
+- Una guarnición a elegir (Patatas fritas pequeñas, Patatas Deluxe medianas, Happy Cherritos, Happy Zanahorias).
+- Una bebida a elegir (refresco de 25 cl, zumo Tropicana de naranja o manzana, agua Nestlé Aquarel,…).
+- Un postre a elegir (mini McFlurry MMs, dos tipos de fruta, Danonino, Actimel).
+- ¡Y un juguete para disfrutar!</string>
+    <string name="mchappyfinal">*El juguete puede variar dependiendo de la oferta de cada restaurante</string>
+    <string name="infoextre">Si todo lo que cocina una abuela queda bueno, imagínate una hamburguesa.
+Pan Rústico, salsa de tomate y chorizo.</string>
+    <string name="mcextrefinal">*La Hamburguesa puede variar dependiendo de la oferta de cada restaurante</string>
+    <string name="infoflurry">- McFlurry Praliné! Irresistible chocolate con barquillo de helado y cremoso praliné.
+    - McFlurry Caramel and Cookies! Déjate envolver por esta fusión de crujiente galleta caramelizada. ¿Se te hace la boca agua? ¡Vamos! Deja de imaginarlo y ven a probarlo.
+    - Añade Kit Kat a tu McFlurry y disfruta de ese delicioso momento. Con sirope de chocolate, caramelo o fresa, ¡todas son buenas opciones!.
+    - Qué mejor forma de darle color a tu día que disfrutar de un delicioso McFlurry con MM. Combínalo con sirope de chocolate, caramelo o fresa, a tu gusto.
+    - McFlurry Oreo! Lo mejor que le podía pasar a tu galleta favorita era ¡poder disfrutarla con tu McFlurry!. Complétalo con sirope de chocolate, caramelo o fresa.
+    </string>
+    <string name="mcflurryfinal">*Los helados pueden variar dependiendo de la oferta de cada restaurante.</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

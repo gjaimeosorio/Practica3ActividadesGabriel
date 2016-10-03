@@ -110,7 +110,7 @@ public class ClasificacionActivity extends AppCompatActivity {
 
         switch(id){
             case R.id.mPpall:
-                toast = Toast.makeText(getApplicationContext(), "A publicidad", Toast.LENGTH_SHORT);
+                toast = Toast.makeText(getApplicationContext(), "A promociones", Toast.LENGTH_SHORT);
                 toast.show();
                 intent = new Intent(ClasificacionActivity.this, MainActivity.class);
                 intent.putExtra("usuario",user);

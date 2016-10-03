@@ -20,7 +20,8 @@
         <activity android:name=".PerfilActivity" />
         <activity android:name=".RegistroActivity" />
         <activity android:name=".LogginActPrefCompartidas" />
-        <activity android:name=".ClasificacionActivity"></activity>
+        <activity android:name=".ClasificacionActivity" />
+        <activity android:name=".AmplInfo"></activity>
     </application>
 
 </manifest>
