@@ -5,16 +5,15 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.FrameLayout;
 import android.widget.Toast;
 
-public class ClasificacionActivity extends AppCompatActivity {
+public class ClasificacionActivity extends NavDrawerActivity {
 
     private ViewPager mViewPager;
     String user, correo;
@@ -22,15 +21,15 @@ public class ClasificacionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_clasificacion);
+        //setContentView(R.layout.activity_clasificacion);
+
+        FrameLayout contentFrameLayout = (FrameLayout) findViewById(R.id.contenedorFrame); //Remember this is the FrameLayout area within your activity_main.xml
+        getLayoutInflater().inflate(R.layout.activity_clasificacion, contentFrameLayout);
+
         Bundle extras = getIntent().getExtras();
         user = extras.getString("usuario");
         correo = extras.getString("email");
-      /*  FragmentManager fm = getSupportFragmentManager();
-        FragmentTransaction ft = fm.beginTransaction();
-        SupermanFragment fragment = new SupermanFragment();
-        ft.add(android.R.id.content, fragment).commit();
-      */
+
         PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager());
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(adapter);
@@ -70,7 +69,7 @@ public class ClasificacionActivity extends AppCompatActivity {
                 getSupportActionBar().setSelectedNavigationItem(position);
             }
         });
-    }
+    }//Close OnCreate
 
     public class PagerAdapter extends FragmentPagerAdapter {
 
@@ -127,7 +126,7 @@ public class ClasificacionActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
                 break;
-        }
+            }
         return super.onOptionsItemSelected(item);
     }
 

@@ -1,109 +1,48 @@
 package practica3.gabrielosorio.com.practica3actividades;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
-    String user, correo;
-    private String[] opciones = new String[] {"Clasificación","Perfil","Promociones","Cerrar sesión"};//
-    private DrawerLayout drawerLayout;//
-    private ListView list;//
-    private ActionBarDrawerToggle drawerToggle;//
+public class MainActivity extends NavDrawerActivity {
+
+    String user, correo, sesion, contrasena;
+
     private Productos[] datos = new Productos[]{
             new Productos(R.drawable.pmcmenu1,15000,"McMENÚ","Lunes oferta 2x1"),
             new Productos(R.drawable.pmenuensalada,12000,"MENÚ ENSALADA","Para los amantes de lo sano"),
-            new Productos(R.drawable.phappymeal3,15000,"HAPPY MEAL","Para los mas pequeños"),
-            new Productos(R.drawable.pmcextremehamb4,6000,"McEXTREME","Con todo el sabor de casa")};
+            new Productos(R.drawable.phappymeal3,8000,"HAPPY MEAL","Para los mas pequeños"),
+            new Productos(R.drawable.pmcextremehamb4,13000,"McEXTREME","Con todo el sabor de casa"),
+            new Productos(R.drawable.pflurry4,0,"McHELADOS","Por la compra de 20000 pesos o más")};
 
     ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        //setContentView(R.layout.activity_main);
+
+        FrameLayout contentFrameLayout = (FrameLayout) findViewById(R.id.contenedorFrame); //Remember this is the FrameLayout area within your activity_main.xml
+        getLayoutInflater().inflate(R.layout.activity_main, contentFrameLayout);
+
         Bundle extras = getIntent().getExtras();//Recibo info de perfil y correo
         user = extras.getString("usuario");
         correo = extras.getString("email");
-
-        ActionBar actionBar = getSupportActionBar();//
-        if (actionBar != null){//
-            actionBar.setHomeAsUpIndicator(R.drawable.ic_menu_white_24dp);//
-            actionBar.setDisplayHomeAsUpEnabled(true);//
-        }
-
-        drawerLayout = (DrawerLayout) findViewById(R.id.contenedorPrincipal);//
-        list = (ListView) findViewById(R.id.menuIzq);//
-
-        list.setAdapter(new ArrayAdapter<String>(getSupportActionBar().getThemedContext(),
-                android.R.layout.simple_list_item_1, opciones));//
-
-        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {//
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {//
-                //Fragment fragment = null;//
-                Intent intent;
-                switch (i){
-                    case(0):
-                        intent = new Intent(MainActivity.this, ClasificacionActivity.class);
-                        intent.putExtra("usuario",user);
-                        intent.putExtra("email",correo);
-                        startActivity(intent);
-                        finish();
-                        break;
-                    case(1):
-                        intent = new Intent(MainActivity.this, PerfilActivity.class);
-                        intent.putExtra("usuario",user);
-                        intent.putExtra("email",correo);
-                        startActivity(intent);
-                        finish();
-                        break;
-                    case(2):
-                        intent = new Intent(MainActivity.this, MainActivity.class);
-                        intent.putExtra("usuario",user);
-                        intent.putExtra("email",correo);
-                        startActivity(intent);
-                        finish();
-                        break;
-                    case(3):
-                        intent = new Intent(MainActivity.this, LogginActivity.class);
-                        startActivity(intent);
-                        finish();
-                        break;
-                }
-                //if (i != 3) {//Solo para fragments
-                //    FragmentManager fragmentManager = getSupportFragmentManager();
-                //   fragmentManager.beginTransaction().replace(R.id.contenedorFrame, fragment).commit();
-                //}
-                list.setItemChecked(i,true);
-                drawerLayout.closeDrawer(list);
-            }
-        });
-
-        drawerToggle = new ActionBarDrawerToggle(this,drawerLayout,R.string.abierto, R.string.cerrado);
-
-        drawerLayout.setDrawerListener(drawerToggle);//
+        sesion = extras.getString("sesion");
+        contrasena = extras.getString("contrasena");
 
         Adapter adaptador = new Adapter(this, datos);//Para el ListView
 
@@ -182,9 +121,6 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("email",correo);
                 startActivity(intent);
                 break;
-            case android.R.id.home:
-                drawerLayout.openDrawer(Gravity.LEFT);
-                return true;
         }
         return super.onOptionsItemSelected(item);
     }

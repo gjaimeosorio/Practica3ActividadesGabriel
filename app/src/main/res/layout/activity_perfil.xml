@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/mcdonalds"
-    tools:context="practica3.gabrielosorio.com.practica3actividades.MainActivity"    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="practica3.gabrielosorio.com.practica3actividades.PerfilActivity"
+    xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <LinearLayout

@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/mcdonalds"
-    tools:context="practica3.gabrielosorio.com.practica3actividades.McExtremeFragment">
+    tools:context="practica3.gabrielosorio.com.practica3actividades.FlurryFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <ScrollView
@@ -18,13 +18,20 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="La McEXTREME contiene:"
+                android:text="El McFLURRY que mas te guste:"
                 android:gravity="center"
                 android:textColor="@color/white"
                 android:textSize="20sp"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="10dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/infoflurry1"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="15sp"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -32,12 +39,12 @@
                 <ImageView
                     android:layout_width="180dp"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/pmcextremehamb4"
+                    android:src="@drawable/pflurry4"
                     android:layout_gravity="center"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/infoextre"
+                    android:text="@string/infoflurry"
                     android:gravity="center"
                     android:textColor="@color/white"
                     android:textSize="15sp"/>
@@ -48,7 +55,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/mcextrefinal"
+                android:text="@string/mcflurryfinal"
                 android:gravity="left"
                 android:textColor="@color/white"
                 android:textSize="12sp"/>
