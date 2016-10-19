@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:background="@color/mcdonalds"
+    android:background="@color/black"
     android:layout_height="120dp">
 
     <ImageView
@@ -37,9 +37,11 @@
             android:textSize="25sp"
             android:text="20000"
             android:id="@+id/tPrecio"
-            android:textColor="@color/mcboton"
+            android:textColor="@color/red"
             android:gravity="right"/>
-
     </LinearLayout>
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/red"/>
 </LinearLayout>

@@ -3,36 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/mcdonalds"
+    android:background="@color/black"
     xmlns:android="http://schemas.android.com/apk/res/android"
     tools:context="practica3.gabrielosorio.com.practica3actividades.AmplInfo">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        />
-
-    <android.support.v4.widget.DrawerLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/contenedorPrincipal"
-        >
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/contenedorFrame">
-        </FrameLayout>
-
-        <ListView
-            android:layout_width="240dp"
-            android:layout_height="match_parent"
-            android:id="@+id/menuIzq"
-            android:choiceMode="singleChoice"
-            android:foregroundGravity="left"
-            android:layout_gravity="start">
-        </ListView>
-    </android.support.v4.widget.DrawerLayout>
-
-    </RelativeLayout>
+</RelativeLayout>

@@ -1,6 +1,8 @@
 package practica3.gabrielosorio.com.practica3actividades;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +14,9 @@ public class RegistroActivity extends AppCompatActivity {
 
     Button bAceptar, bCancelar;
     EditText eRUsuario, eRContrasena, eRRContrasena, eCorreoE;
+    ContactosSQLiteHelper contactos;
+    SQLiteDatabase dbContactos;
+    ContentValues dataBD;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

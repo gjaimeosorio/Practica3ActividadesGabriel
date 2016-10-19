@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/pager"
-    android:background="@color/mcdonalds"
+    android:background="@color/black"
     xmlns:android="http://schemas.android.com/apk/res/android"
     tools:context="practica3.gabrielosorio.com.practica3actividades.ClasificacionActivity">
 </android.support.v4.view.ViewPager>

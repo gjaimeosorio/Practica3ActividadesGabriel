@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/mcdonalds"
+    android:background="@color/black"
     tools:context="practica3.gabrielosorio.com.practica3actividades.McmenuEnsaFragment">
 
     <!-- TODO: Update blank fragment layout -->
