@@ -7,18 +7,16 @@ import android.database.sqlite.SQLiteOpenHelper;
 /**
  * Created by Jaime on 19/10/2016.
  */
-public class ContactosSQLiteHelper extends SQLiteOpenHelper {
-
-    private String DATA_BASE_NAME = "ContactosDB";
+public class MisFavoritosSQLiteHelper extends SQLiteOpenHelper {
+    private String DATA_BASE_NAME = "FavoritosDB";
     private int DATA_VERSION = 1;
 
-    String sqlCreate = "CREATE TABLE Contactos (" +
-            "id         INTEGER PRIMARY KEY AUTOINCREMENT, " +
-            "usuario     TEXT, " +
-            "contrasena   TEXT, " +
-            "email     TEXT)";
+    String sqlCreate = "CREATE TABLE MisFavoritos (" +
+            "idfavorito         INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            "idusuario     TEXT, " +
+            "idproducto   TEXT)";
 
-    public ContactosSQLiteHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+    public MisFavoritosSQLiteHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
 
@@ -31,8 +29,9 @@ public class ContactosSQLiteHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {//Actualizar i (inicial), i1 (version final)
 
-        sqLiteDatabase.execSQL("DROP TABLE IF EXITST Contactos"); //Si no existe la tabla, la crea.
+        sqLiteDatabase.execSQL("DROP TABLE IF EXITST MisFavoritos"); //Si no existe la tabla, la crea.
         sqLiteDatabase.execSQL(sqlCreate);
 
     }
 }
+

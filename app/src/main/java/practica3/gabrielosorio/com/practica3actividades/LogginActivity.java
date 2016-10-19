@@ -2,6 +2,8 @@ package practica3.gabrielosorio.com.practica3actividades;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -22,10 +24,16 @@ public class LogginActivity extends AppCompatActivity implements View.OnClickLis
     SharedPreferences prefs;
     SharedPreferences.Editor editor;
 
+    ContactosSQLiteHelper contactos;
+    SQLiteDatabase dbContactos;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loggin);
+
+        contactos = new ContactosSQLiteHelper(this, "ContactosDB", null, 1);
+        dbContactos = contactos.getWritableDatabase();
 
         prefs = getPreferences(MODE_PRIVATE);//Preferencias compartidas
         editor = prefs.edit();
@@ -71,24 +79,30 @@ public class LogginActivity extends AppCompatActivity implements View.OnClickLis
         switch (id) {
             case R.id.bRegistro:
                 Intent intent = new Intent(this, RegistroActivity.class);
-                startActivityForResult(intent,1234);
+                startActivityForResult(intent, 1234);
                 break;
             case R.id.bEntrar:
-                if (prefs.getString(user,contrasena).length()==0) {
-                    Toast toast1 = Toast.makeText(getApplicationContext(), "Aún no se ha registrado", Toast.LENGTH_LONG);
-                    toast1.show();
-                }
-                else if((eUsuario.getText().toString().equals(user))&&(eContrasena.getText().toString().equals(contrasena))) {
-                    Intent intent1 = new Intent().setClass(this, MainActivity.class);
-                    intent1.putExtra("usuario",user);
-                    intent1.putExtra("email",correo);
-                    intent1.putExtra("sesion","entro");
-                    intent1.putExtra("contrasena",contrasena);
-                    savePref(view);
-                    startActivity(intent1);
-                    finish();
-                }
-                else{
+                user = eUsuario.getText().toString();
+                contrasena = eContrasena.getText().toString();
+                Cursor c = dbContactos.rawQuery("SELECT * FROM Contactos WHERE usuario='"+user+"'",null);
+                if(c.moveToFirst()) {
+                    if (contrasena.equals(c.getString(2))) {
+                        user = c.getString(1);
+                        correo = c.getString(3);
+                        contrasena = c.getString(2);
+                        savePref(view);
+                        Intent intent1 = new Intent().setClass(this, MainActivity.class);
+                        intent1.putExtra("usuario", user);
+                        intent1.putExtra("email", correo);
+                        intent1.putExtra("sesion", "entro");
+                        intent1.putExtra("contrasena", contrasena);
+                        startActivity(intent1);
+                        finish();
+                    } else {
+                        Toast toast1 = Toast.makeText(getApplicationContext(), "Usuario o contraseña incorrectos", Toast.LENGTH_LONG);
+                        toast1.show();
+                    }
+                }else {
                     Toast toast1 = Toast.makeText(getApplicationContext(), "Usuario o contraseña incorrectos", Toast.LENGTH_LONG);
                     toast1.show();
                 }
@@ -99,9 +113,9 @@ public class LogginActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 1234 && resultCode == RESULT_OK){
-            user = data.getExtras().getString("usuario");
-            contrasena = data.getExtras().getString("contrasena");
-            correo = data.getExtras().getString("email");
+            //user = data.getExtras().getString("usuario");
+            //contrasena = data.getExtras().getString("contrasena");
+            //correo = data.getExtras().getString("email");
             Log.d("usuario",user);//Muestra lo que pasa en debug
             Log.d("contraseña",contrasena);//Ayuda a ver si se hace lo que quiero
             //Toast.makeText(this, "user: "+user+" contrasena: "+contrasena,Toast.LENGTH_SHORT).show();

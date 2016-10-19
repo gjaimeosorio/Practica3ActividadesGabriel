@@ -69,7 +69,8 @@
                 android:layout_height="5dp"/>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
             <Button
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -88,5 +89,23 @@
                 android:text="@string/cancelar"
                 android:background="@color/mcboton"/>
         </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:id="@+id/bMostrar"
+                android:text="Mostrar usuarios registrados"
+                android:background="@color/mcboton"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:id="@+id/eMostrar"/>
     </LinearLayout>
 </ScrollView>
