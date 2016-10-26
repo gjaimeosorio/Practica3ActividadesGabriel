@@ -15,7 +15,7 @@ public class ProductosSQLiteHelper extends SQLiteOpenHelper {
             "idproducto         INTEGER PRIMARY KEY AUTOINCREMENT, " +
             "producto     TEXT, " +
             "descripcion   TEXT, " +
-            "texto     INTEGER)";
+            "precio     TEXT)";
 
     public ProductosSQLiteHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);

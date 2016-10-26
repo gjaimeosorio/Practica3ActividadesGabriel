@@ -17,7 +17,7 @@ import android.widget.ListView;
 
 public class NavDrawerActivity extends AppCompatActivity {
 
-    private String[] opciones = new String[] {"Clasificación","Perfil","Promociones","Cerrar sesión"};//
+    private String[] opciones = new String[] {"Clasificación","Perfil","Promociones","Mis favoritos","Cerrar sesión"};//
     private DrawerLayout drawerLayout;
     private ListView listView;
     private ActionBarDrawerToggle drawerToggle;
@@ -79,6 +79,15 @@ public class NavDrawerActivity extends AppCompatActivity {
                         finish();
                         break;
                     case(3):
+                        intent = new Intent(NavDrawerActivity.this, MisFavoritosActivity.class);
+                        intent.putExtra("usuario",user);
+                        intent.putExtra("email",correo);
+                        intent.putExtra("contrasena",contrasena);
+                        intent.putExtra("sesion",sesion);
+                        startActivity(intent);
+                        finish();
+                        break;
+                    case(4):
                         intent = new Intent(NavDrawerActivity.this, LogginActivity.class);
                         intent.putExtra("usuario",user);
                         intent.putExtra("email",correo);

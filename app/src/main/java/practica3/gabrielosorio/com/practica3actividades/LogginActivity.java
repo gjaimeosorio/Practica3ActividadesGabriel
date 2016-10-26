@@ -10,16 +10,18 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class LogginActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button bRegistro, bEntrar;
+    Button bEntrar;
     EditText eContrasena, eUsuario;
     String user = "";
     String contrasena = "";
     String correo;
     String sesion;
+    TextView LinkRegistro;
 
     SharedPreferences prefs;
     SharedPreferences.Editor editor;
@@ -47,12 +49,13 @@ public class LogginActivity extends AppCompatActivity implements View.OnClickLis
             editor.putString("sesion",sesion);
             editor.commit();
         }
-        bRegistro = (Button) findViewById(R.id.bRegistro);
         bEntrar = (Button) findViewById(R.id.bEntrar);
         eContrasena = (EditText)findViewById(R.id.eContrasena);
         eUsuario = (EditText) findViewById(R.id.eUsuario);
-        bRegistro.setOnClickListener(this);
+        LinkRegistro = (TextView) findViewById(R.id.bRegistrolink);
         bEntrar.setOnClickListener(this);
+        LinkRegistro.setOnClickListener(this);
+
 
         /*    Bundle extras = getIntent().getExtras();
     String user = extras.getString("usuario");
@@ -77,9 +80,9 @@ public class LogginActivity extends AppCompatActivity implements View.OnClickLis
     public void onClick(View view) {
         int id = view.getId();
         switch (id) {
-            case R.id.bRegistro:
-                Intent intent = new Intent(this, RegistroActivity.class);
-                startActivityForResult(intent, 1234);
+            case R.id.bRegistrolink:
+                Intent intent4 = new Intent(this, RegistroActivity.class);
+                startActivityForResult(intent4, 1234);
                 break;
             case R.id.bEntrar:
                 user = eUsuario.getText().toString();

@@ -113,7 +113,7 @@ public class RegistroActivity extends AppCompatActivity {
                             if(j==2)
                                 j = 3;
                             //append the column value to the string builder and delimit by a pipe symbol
-                            mostrar.append(c.getString(j) + " | ");
+                            mostrar.append(c.getString(j) + "   |   ");
                         }
                         //add a new line carriage return
                         mostrar.append("\n");

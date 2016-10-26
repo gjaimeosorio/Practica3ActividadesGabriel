@@ -1,5 +1,6 @@
 package practica3.gabrielosorio.com.practica3actividades;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -13,8 +14,8 @@ public class MisFavoritosSQLiteHelper extends SQLiteOpenHelper {
 
     String sqlCreate = "CREATE TABLE MisFavoritos (" +
             "idfavorito         INTEGER PRIMARY KEY AUTOINCREMENT, " +
-            "idusuario     TEXT, " +
-            "idproducto   TEXT)";
+            "idusuario     INTEGER, " +
+            "idproducto   INTEGER)";
 
     public MisFavoritosSQLiteHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
@@ -31,7 +32,23 @@ public class MisFavoritosSQLiteHelper extends SQLiteOpenHelper {
 
         sqLiteDatabase.execSQL("DROP TABLE IF EXITST MisFavoritos"); //Si no existe la tabla, la crea.
         sqLiteDatabase.execSQL(sqlCreate);
+    }
 
+    public void AddFav(int idus, int idpr) {
+        SQLiteDatabase db = getWritableDatabase();
+        if(db != null){
+            ContentValues dataFavdBD = new ContentValues();
+            dataFavdBD.put("idUsuario", idus);
+            dataFavdBD.put("idProducto", idpr);
+            db.insert("MisFavoritos", null, dataFavdBD);
+            db.close();
+        }
+    }
+
+    public void deleteFav(int idus,int idProductor) {
+        SQLiteDatabase db = getWritableDatabase();
+        db.delete("MisFavoritos", "idUsuario="+idus+" AND idProductoroducto="+idProductor, null);
+        db.close();
     }
 }
 

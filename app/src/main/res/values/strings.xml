@@ -5,7 +5,7 @@
     <string name="rcontrasena">Repetir Contraseña</string>
     <string name="entrar">Entrar</string>
     <string name="correo">Correo Electrónico</string>
-    <string name="registro">Registro</string>
+    <string name="registro"><u>Registro de usuario nuevo</u></string>
     <string name="aceptar">Aceptar</string>
     <string name="cancelar">Cancelar</string>
     <string name="miperfil">Mi Perfil</string>

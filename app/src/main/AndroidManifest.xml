@@ -22,7 +22,8 @@
         <activity android:name=".LogginActPrefCompartidas" />
         <activity android:name=".ClasificacionActivity" />
         <activity android:name=".AmplInfo" />
-        <activity android:name=".NavDrawerActivity"></activity>
+        <activity android:name=".NavDrawerActivity" />
+        <activity android:name=".MisFavoritosActivity"></activity>
     </application>
 
 </manifest>

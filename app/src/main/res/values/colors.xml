@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<color name="mcsplash">#bc2204</color>
-	<color name="mcboton">#fbc72f</color>
+	<color name="mcboton">#fdd406</color>
+	<color name="mcboton2">#fbfd1c</color>
 	<color name="mcdonalds">#d42b1e</color>
 	<color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>

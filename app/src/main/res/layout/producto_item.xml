@@ -4,11 +4,12 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:background="@color/black"
-    android:layout_height="120dp">
+    android:layout_height="140dp"
+    android:descendantFocusability="blocksDescendants">
 
     <ImageView
         android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_height="140dp"
         android:id="@+id/iImagen"
         android:src="@drawable/h1"/>
 
@@ -39,9 +40,18 @@
             android:id="@+id/tPrecio"
             android:textColor="@color/red"
             android:gravity="right"/>
+        <ToggleButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOff="Agregar a favoritos"
+            android:textOn="Favorito"
+            android:layout_gravity="right"
+            android:id="@+id/tFavorito"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/red"/>
     </LinearLayout>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="@color/red"/>
+
 </LinearLayout>
