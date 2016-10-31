@@ -1,5 +1,6 @@
 package practica3.gabrielosorio.com.practica3actividades;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
@@ -37,7 +38,7 @@ public class LogginActivity extends AppCompatActivity implements View.OnClickLis
         contactos = new ContactosSQLiteHelper(this, "ContactosDB", null, 1);
         dbContactos = contactos.getWritableDatabase();
 
-        prefs = getPreferences(MODE_PRIVATE);//Preferencias compartidas
+        prefs = getSharedPreferences("preferencia", Context.MODE_PRIVATE);
         editor = prefs.edit();
         refreshPrefs();
 

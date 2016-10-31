@@ -1,5 +1,6 @@
 package practica3.gabrielosorio.com.practica3actividades;
 
+import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.ToggleButton;
 
@@ -9,15 +10,15 @@ import android.widget.ToggleButton;
 public class Productos {
     int idImagen;
     String nombre, descripcion, precio;
-    boolean check;
-    boolean status = false;
+    int idproducto;
 
-    public Productos(int idImagen, String precio, String nombre, String descripcion, boolean check) {
+
+    public Productos(int idImagen, String precio, String nombre, String descripcion, int idproducto) {
         this.idImagen = idImagen;
         this.precio = precio;
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.check = check;
+        this.idproducto = idproducto;
     }
 
     public String getDescripcion() {
@@ -52,26 +53,12 @@ public class Productos {
         this.idImagen = idImagen;
     }
 
-    public boolean getCheck(ToggleButton tButton) {
-
-        tButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean isCheked) {
-
-                if (isCheked) {
-                    // The toggle is enabled
-                    status = true;
-                } else {
-                    // The toggle is disabled
-                    status = false;
-                }
-            }
-        });
-        return status;
+    public int getIdproducto() {
+        return idproducto;
     }
 
-    public void setCheck(boolean check) {
-        this.check = check;
+    public void setIdproducto(int idproducto) {
+        this.idproducto = idproducto;
     }
 }
 

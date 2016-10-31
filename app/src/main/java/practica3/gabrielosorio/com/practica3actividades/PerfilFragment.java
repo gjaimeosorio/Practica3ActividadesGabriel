@@ -22,12 +22,10 @@ public class PerfilFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle extras) {
+                             Bundle savedInstanceState) {
 
-        eUser = (TextView) container.findViewById(R.id.eName);
-        eCorreo = (TextView) container.findViewById(R.id.eMail);
-        eUser.setText(user);
-        eCorreo.setText(correo);
+        //PENDIENTE
+        //CREAR SWIPTABS CON EL PERFIL Y LOS FAVORITOS EN LA ACTIVIDAD PERFIL
 
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_perfil, container, false);
