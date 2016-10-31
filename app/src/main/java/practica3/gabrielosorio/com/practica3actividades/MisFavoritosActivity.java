@@ -185,6 +185,10 @@ public class MisFavoritosActivity extends NavDrawerActivity {
                         dbFavoritos.delete("MisFavoritos", "idFavorito='" + idFavorito + "'", null);
                         Toast.makeText(getApplicationContext(), "Eliminado de favoritos", Toast.LENGTH_SHORT).show();
                         Intent intent1 = new Intent().setClass(getApplicationContext(),MisFavoritosActivity.class);
+                        intent1.putExtra("usuario", user);
+                        intent1.putExtra("email", correo);
+                        intent1.putExtra("sesion", "entro");
+                        intent1.putExtra("contrasena", contrasena);
                         startActivity(intent1);
                         finish();
                     } else
